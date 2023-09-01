@@ -1,27 +1,96 @@
 <!DOCTYPE html>
 <html>
     <head>
+<style>
+   
+    .box1,.box2{
+        height:300px;
+        width: 300px;
+        background-color: black;
+        color:black;
+        font-size: xx-large;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .outer{
+        display: flex;
+        gap: 20px;
+        border: 12px solid black;
         
-        <title>
-        practice
-        </title>
-        <style>
-        body{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+        padding: 10px;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+</style>
+<script>
+    var timeoutId;
+    function colorChange(x){
+        timeoutId=setTimeout(()=>{
+            const box1 = document.getElementsByClassName("box1");
+            const box2 = document.getElementsByClassName("box2");
+            box1[0].style.backgroundColor = "blue";
+            box2[0].style.backgroundColor = "blue";
+            colorChange2();
+            
+        },50)
+       
+
+    }
+       function colorChange2(x) {
+            
+             timeoutId=setTimeout(() => {
+               const box1 = document.getElementsByClassName("box1");
+                 const box2 = document.getElementsByClassName("box2");
+                 box1[0].style.backgroundColor = "black";
+                 box2[0].style.backgroundColor = "black";
+                 colorChange();
+                 
+           }, 50)
+
+        }
+        function normal(){
+            
+            const box1 = document.getElementsByClassName("box1");
+            const box2 = document.getElementsByClassName("box2");
+            box1[0].style.backgroundColor = "black";
+            box2[0].style.backgroundColor = "black";
+
+            clearTimeout(timeoutId);
+        }
+        function red() {
+
+               
+                const box2 = document.getElementsByClassName("box2");
+              
+                box2[0].style.backgroundColor = "red";
+
+                clearTimeout(timeoutId);
             }
-        </style>
+             function red2() {
+
+console.log("red");
+                    const box2 = document.getElementsByClassName("box2");
+
+                    box2[0].style.backgroundColor = "red";
+
+                    clearTimeout(timeoutId);
+                }
+
+</script>
     </head>
     <body>
-        
-        <h1>This is heading 1</h1>
-        <h2>This is heading 2</h2>
-        <h3>This is heading 3</h3>
-        <h4>This is heading 4</h4>
-        <h5>This is heading 5</h5>
-        <h6>This is heading 6</h6>
-        
+        <div class="outer" onmouseover="colorChange(this)" onmouseout="normal()" onclick="red()" >
+            <div class="box1" >
+                Gurjot          
+            </div>
+            <div class="box2" >
+Singh
+            </div>
+        </div>
     </body>
 </html>

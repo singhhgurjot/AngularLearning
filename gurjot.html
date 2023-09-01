@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>gurjot</title>
+        <style>
+           #circle{
+            height: 250px;
+            width:250px;
+            background-color:black;
+            border-radius: 400px;
+            
+            
+            
+           }
+           .wing{
+            background-color: black;
+            width:400px;
+            height: 100px;
+           }
+           .horizontal{
+            display: flex;
+            align-items: center;
+           }
+            .wing2{
+            background-color: black;
+            width:100px;
+            height: 400px;
+           }
+           .vertical{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+            
+            
+           }
+           .fan{
+           
+animation: fanr 1s infinite linear;
+           }
+          
+
+           @keyframes fanr {
+          from{
+            transform: rotate(0deg);
+          }
+          to{
+            transform: rotate(359deg);
+          }
+           }
+          
+        </style>
+        <script>
+  
+        </script>   
+    </head>
+    <body>
+        <div class="fan">
+        <div class="vertical">
+<div class="wing2"></div>
+        <div class="horizontal">
+            <div class="wing"></div>
+            <div id="circle"></div>
+        
+        <div class="wing"></div>
+        </div>
+        
+        <div class="wing2"></div>
+        </div>
+        
+        </div>
+        
+    </body>
+</html>
