@@ -4,41 +4,86 @@
 <title>practive</title>
 <Style>
 .outer{
-height:400px;
-    width:400px;
-    background-color: red;
+height: 500px;
+    width: 500px;
+    border: 20px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .inner{
-    height:200px;
-    width:200px;
-    background-color: blue;
+    height: 300px;
+    width: 300px;
+border: 20px solid red;
+   
+
 }
-.inner2{
-    height:200px;
-    width:200px;
-    background-color: green;
+.innerest{
+     height: 200px;
+    width: 200px;
+border: 20px solid green;
+
 }
-.inner3{
-    height:100px;
-    width:100px;
-    background-color: yellow;
-    position:relative;
-    bottom: 62.5%;
-    left: 37.5%;
+.rotateStraight{
+    animation: onceRotate 2s linear;
+}
+.rotate063{
+animation: onceRotate2 2s linear;
+}
+@keyframes onceRotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes onceRotate2{
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
 }
 </Style>
+
     </head>
     <body>
-<div class="outer">
-    <div class="inner">
+<div class="outer" >
+    
+    <div class="inner" >
+        
+        <div class="innerest" >
 
-    </div>
-    <div class="inner2">
-    <div class="inner3">
+        </div>
     
     </div>
-    </div>
-   
+
 </div>
     </body>
+    <script>
+        const outer = document.querySelector(".outer");
+        const inner = document.querySelector(".inner");
+        const innerest = document.querySelector(".inner");
+        outer.addEventListener("mouseover", () => {
+            outer.classList.add("rotateStraight");
+            inner.classList.remove("rotateStraight");
+            inner.classList.add("rotate063");
+
+        })
+          inner.addEventListener("mouseover", () => {
+            inner.classList.remove("rotate063");
+                inner.classList.add("rotateStraight");
+            
+                innerest.classList.add("rotate063");
+
+            })
+             innerest.addEventListener("mouseover", () => {
+                  innerest.classList.remove("rotate063");
+                    innerest.classList.add("rotatStraight");
+
+                })
+
+    </script>
 </html>
